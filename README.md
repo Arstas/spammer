@@ -7,9 +7,9 @@
 • <code>apt update && apt upgrade -y</code><br>
 • <code>pkg install python</code><br>
 • <code>pkg install git</code><br>
-• <code>git clone https://github.com/palkamilka/spammer-by-ARnoLD</code><br>
-• <code>cd spammer-by-ARnoLD</code><br>
-• <code>python install.py</code><br>
+• <code>git clone https://github.com/Arstas/spammer</code><br>
+• <code>cd spammer</code><br>
+• <code>python3 install.py</code><br>
 
 ## 🚩 Запуск
 <b>1. Запустите файл log.py и подождите конца загрузки<br>
