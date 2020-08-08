@@ -13,12 +13,14 @@
 
 ## Установка на Windows
 
-<b>Скачать <a href="https://play.google.com/store/apps/details?id=com.termux&hl=ru">Python3 новой версии</a> и установить его<br>
+<b>Скачать и установить <a href="https://play.google.com/store/apps/details?id=com.termux&hl=ru">Python3 новой версии</a><br>
 <b>ВАЖНО!!! ПРИ УСТАНОВКЕ ПОСТАВЬТЕ ГАЛОЧКУ НА ПУНКТЕ "Add Python 3.8 to PATH"<br>
 ![Image alt](https://github.com/Arstas/spammer/blob/master/img/img.png)
+<b>Запустите файл install.py<br>
+
 ## 🚩 Запуск
-<b>1. Запустите файл log.py и подождите конца загрузки<br>
-<b>2. Запустите файл spammer.py<br>
+<b>1. python3 log.py<br>
+<b>2. python3 spammer.py<br>
 
 ## Функции в скрипте
 <b>1. Спамер смс<br>
