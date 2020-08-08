@@ -5,10 +5,5 @@ class CleverSite(Service):
     async def run(self):
         await self.post(
             "https://clients.cleversite.ru/callback/run.php",
-            data={
-                "siteid": "62731",
-                "num": self.formatted_phone,
-                "title": "Онлайн-консультант",
-                "referrer": "https://m.cleversite.ru/call",
-            },
+            data={"siteid": "62731", "num": phone, "title": "Онлайн-консультант", "referrer": "https://m.cleversite.ru/call"},
         )
