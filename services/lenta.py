@@ -5,5 +5,5 @@ class Lenta(Service):
     async def run(self):
         await self.post(
             "https://lenta.com/api/v1/authentication/requestValidationCode",
-            json={"phone": "+" + self.formatted_phone},
+            json={"phone": "+" + phone},
         )

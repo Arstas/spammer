@@ -5,12 +5,5 @@ class ICQ(Service):
     async def run(self):
         await self.post(
             "https://www.icq.com/smsreg/requestPhoneValidation.php",
-            data={
-                "msisdn": self.formatted_phone,
-                "locale": "en",
-                "countryCode": "ru",
-                "version": "1",
-                "k": "ic1rtwz1s1Hj1O0r",
-                "r": "46763",
-            },
+            data={"msisdn": phone, "locale": "en", "countryCode": "ru", "version": "1", "k": "ic1rtwz1s1Hj1O0r", "r": "46763"},
         )

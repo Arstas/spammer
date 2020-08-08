@@ -2,10 +2,8 @@ from b0mb3r.services.service import Service
 
 
 class MisterCash(Service):
-    phone_codes = [380]
-
     async def run(self):
-        await self.get(
+        await self.post(
             "https://my.mistercash.ua/ru/send/sms/registration",
-            params={"number": "+" + self.formatted_phone,},
+            params={"number": "+"+phone},
         )
