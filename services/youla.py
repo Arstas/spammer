@@ -5,5 +5,5 @@ class Youla(Service):
     async def run(self):
         await self.post(
             "https://youla.ru/web-api/auth/request_code",
-            data={"phone": self.formatted_phone},
+            data={"phone": phone},
         )

@@ -1,11 +1,9 @@
 from b0mb3r.services.service import Service
 
 
-class Sportmaster(Service):
-    phone_codes = [7]
-
+class SportMaster(Service):
     async def run(self):
-        await self.get(
-            "https://www.sportmaster.ru/user/session/sendSmsCode.do",
-            params={"phone": self.format(self.formatted_phone, "+* (***) ***-**-**"),},
+        await self.post(
+            "https://www.sportmaster.ru/",
+            params={"module": "users", "action": "SendSMSReg", "phone": phone},
         )

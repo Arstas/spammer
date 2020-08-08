@@ -1,9 +1,9 @@
 from b0mb3r.services.service import Service
 
 
-class Suanshi(Service):
+class SuAndShi(Service):
     async def run(self):
-        await self.get(
+        await self.post(
             "https://suandshi.ru/mobile_api/register_mobile_user",
-            params={"phone": self.formatted_phone,},
+            params={"phone": phone},
         )
