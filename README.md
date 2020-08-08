@@ -2,7 +2,7 @@
 <b>Мощный флудер<br>
 
 ## Как установить?
-<b1>Установка на Android<b1/> - скачать <a href="https://play.google.com/store/apps/details?id=com.termux&hl=ru">Termux из Google Play</a>, открыть его и прописать команды ниже:<br>
+<b1>Установка на Android</b1> - скачать <a href="https://play.google.com/store/apps/details?id=com.termux&hl=ru">Termux из Google Play</a>, открыть его и прописать команды ниже:<br>
 
 • <code>apt update && apt upgrade -y</code><br>
 • <code>pkg install python</code><br>
