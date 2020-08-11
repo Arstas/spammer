@@ -1,5 +1,6 @@
 import os
 os.system("pip3 install colorama")
+os.system("pip3 install pysocks")
 os.system("pip3 install wheel")
 os.system("pip3 install fastapi")
 os.system("pip3 install uvicorn")
