@@ -82,7 +82,7 @@ def mail():
   os.system('cls' if os.name=='nt' else 'clear')
   print (logo)
   print ('Введите адрес почты с которой будеть отправляться сообщения (только почта яндекс или мэйл):')
-  print ('ВНИМАНИЕ! К ПОЧТЕ ДОЛЖЕН БЫТЬ ПРИВЯЗАН НОМЕР ТЕЛЕФОНА!')
+  print ('[*] ВНИМАНИЕ! К ПОЧТЕ ДОЛЖЕН БЫТЬ ПРИВЯЗАН НОМЕР ТЕЛЕФОНА!')
   L = input ('>>>')
   os.system('cls' if os.name=='nt' else 'clear')
   print (logo)
@@ -90,23 +90,34 @@ def mail():
   P = input ('>>>')
   os.system('cls' if os.name=='nt' else 'clear')
   print (logo)
-  print ('Если почта яндекс введите - smtp.mail.ru, если мэил smtp.yandex.ru')
-  U = input(">>>")
+  print ('СЕРВИС ВАШЕЙ ПОЧТЫ:')
+  print ('[1] - GMAIL.COM')
+  print ('[2] - YANDEX.RU')
+  print ('[3] - MAIL.RU')
+  Uchoose = input ('>>>')
+  if Uchoose == "1":
+    U = "smtp.gmail.com"
+  if Uchoose == "2":
+    U = "smtp.yandex.ru"
+  if Uchoose == "3":
+    U = "smtp.mail.ru"
+  else:
+    mail()
   os.system('cls' if os.name=='nt' else 'clear')
   print (logo)
-  print ('Почта жертвы')
+  print ('ПОЧТА ЖЕРТВЫ')
   To = input ('>>>')
   os.system('cls' if os.name=='nt' else 'clear')
   print (logo)
-  print ('Тема письма')
+  print ('ТЕМА ПИСЬМА')
   T = input ('>>>')
   os.system('cls' if os.name=='nt' else 'clear')
   print (logo)
-  print ('Текст письма')
+  print ('ТЕКСТ ПИСЬМА')
   M = input ('>>>')
   os.system('cls' if os.name=='nt' else 'clear')
   print (logo)
-  print ('Количество писем')
+  print ('КОЛИЧЕСТВО ПИСЕМ')
   N = input ('>>>')
   for value in range( int( N ) ):
     msg = MIMEMultipart()
@@ -176,6 +187,10 @@ def main():
   except:
       os.system('cls' if os.name=='nt' else 'clear')
       conection()
+  print ("[*] ПРОИСХОДИТ ЗАПУСК ПРОГРАММЫ!")
+  time.sleep(30)
+  os.system('cls' if os.name=='nt' else 'clear')
+  print (logo)
   print ('[1] - ОТКРЫТЬ СПАМЕР')
   print ('[2] - ОБНОВИТЬ СПАМЕР')
   choose = input ('>>>')
@@ -224,8 +239,11 @@ def openupdate():
     os.system('cls' if os.name=='nt' else 'clear')
     print (logo)
     print ('[*] Происходит установка...')
-    os.system("cd && rm -rf ~/spammer && git clone https://github.com/Arstas/spammer && python ~/spammer/install.py")
-      
+    os.system("cd")
+    os.system("rm -rf spammer")
+    os.system("git clone https://github.com/Arstas/spammer")
+    os.system("cd spammer")
+    os.system("python3 install.py")
 def conection():
   os.system('cls' if os.name=='nt' else 'clear')
   print (logo)
