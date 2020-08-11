@@ -15,10 +15,10 @@
 
 <b>Скачать и установить <a href="https://play.google.com/store/apps/details?id=com.termux&hl=ru">Python3 новой версии</a><br>
 <b>ВАЖНО!!! ПРИ УСТАНОВКЕ ПОСТАВЬТЕ ГАЛОЧКУ НА ПУНКТЕ "Add Python 3.8 to PATH"<br>
-![](https://github.com/Arstas/spammer/blob/master/img/img.png)
 <b>Запустите файл install.py<br>
+![](https://github.com/Arstas/spammer/blob/master/img/img.png)
 
-## 🚩 Запуск
+## Запуск
 <b>1. python3 log.py<br>
 <b>2. python3 spammer.py<br>
 
