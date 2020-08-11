@@ -17,7 +17,7 @@
 <b>ВАЖНО!!! ПРИ УСТАНОВКЕ ПОСТАВЬТЕ ГАЛОЧКУ НА ПУНКТЕ "Add Python 3.8 to PATH"<br>
 <b>Запустите файл install.py<br>
 ![](https://github.com/Arstas/spammer/blob/master/img/img.png)
-
+<b><br>
 ## Запуск
 <b>1. python3 log.py<br>
 <b>2. python3 spammer.py<br>
