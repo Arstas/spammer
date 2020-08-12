@@ -302,15 +302,15 @@ def openupdate():
     print ('[*] Происходит установка...')
     directory = os.getcwd()
     username = os.environ.get("USERNAME")
-    os.system('DEL /q /s ' + 'C:\\Users\\' + username + '\\Downloads\\spammer-master.zip')
-    os.system("DEL " + directory + " /q /s")
-    os.system('RMDIR /q /s ' + 'C:\\Users\\' + username + '\\Downloads\\spammer-master')
-    urllib.request.urlretrieve('https://github.com/Arstas/spammer/archive/master.zip', 'C:/Users/' + username + '/Downloads/spammer-master.zip')
-    archive = 'C:/Users/' + username + '/Downloads/spammer-master.zip'
+    os.system('DEL /q /s ' + 'C:\\Users\\' + username + '\\Documents\\spammer-master.zip')
+    os.system("DEL /q /s" + directory)
+    os.system('RMDIR /q /s ' + 'C:\\Users\\' + username + '\\Documents\\spammer-master')
+    urllib.request.urlretrieve('https://github.com/Arstas/spammer/archive/master.zip', 'C:/Users/' + username + '/Documents/spammer-master.zip')
+    archive = 'C:/Users/' + username + '/Documents/spammer-master.zip'
     unziparchive = zipfile.ZipFile(archive)
-    unziparchive.extractall('C:/Users/' + username + '/Downloads')
+    unziparchive.extractall('C:/Users/' + username + '/Documents')
     unziparchive.close()
-    os.system("XCOPY \\Users\\" + username + "\\Downloads\\spammer-master " + directory +" /E /Y")
+    os.system("XCOPY \\Users\\" + username + "\\Documents\\spammer-master " + directory +" /E /Y")
   else:
     os.system('cls' if os.name=='nt' else 'clear')
     print (logo)
