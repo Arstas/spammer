@@ -86,7 +86,9 @@ def mail():
   "spammerarnold1@gmail.com", 
   "spammerarnold2@gmail.com",
   "spammerarnold3@gmail.com",
-  "spammerarnold5@gmail.com"]
+  "spammerarnold4@gmail.com",
+  "spammerarnold5@gmail.com",
+  "spammerarnold6@gmail.com"]
   L = random.choice(Login)
   P = "454647Ws"
   U = "smtp.gmail.com"
