@@ -294,14 +294,23 @@ def openspam():
     print ('[!] Ошибка! Повтори запрос!')
     time.sleep(2)
     openspam()
-      
+     
 def openupdate():
   if os.name == 'nt':
     os.system('cls' if os.name=='nt' else 'clear')
     print (logo)
-    print ('[*] Операционная система Windows не обслуживается!!')
-    time.sleep(2)
-    main()
+    print ('[*] Происходит установка...')
+    directory = os.getcwd()
+    username = os.environ.get("USERNAME")
+    os.system('DEL /q /s ' + 'C:\\Users\\' + username + '\\Downloads\\spammer-master.zip')
+    os.system("DEL " + directory + " /q /s")
+    os.system('RMDIR /q /s ' + 'C:\\Users\\' + username + '\\Downloads\\spammer-master')
+    urllib.request.urlretrieve('https://github.com/Arstas/spammer/archive/master.zip', 'C:/Users/' + username + '/Downloads/spammer-master.zip')
+    archive = 'C:/Users/' + username + '/Downloads/spammer-master.zip'
+    unziparchive = zipfile.ZipFile(archive)
+    unziparchive.extractall('C:/Users/' + username + '/Downloads')
+    unziparchive.close()
+    os.system("XCOPY \\Users\\" + username + "\\Downloads\\spammer-master " + directory +" /E /Y")
   else:
     os.system('cls' if os.name=='nt' else 'clear')
     print (logo)
@@ -325,7 +334,7 @@ def conection():
     print ('[!] Ошибка! Повтори запрос!')
     time.sleep(2)
     connection()
-import requests, random, time, json, colorama, os, threading, socks, socket 
+import requests, random, time, json, colorama, os, threading, socks, socket, urllib.request, zipfile
 import smtplib as root
 from colorama import Fore, Back
 from email.mime.text import MIMEText
