@@ -79,58 +79,18 @@ def sms():
       main()
 
 def mail():
-  global L
-  os.system('cls' if os.name=='nt' else 'clear')
-  print (logo)
-  print ('Введите адрес почты с которой будеть отправляться сообщения:')
-  print ('[*] ВНИМАНИЕ! К ПОЧТЕ ДОЛЖЕН БЫТЬ ПРИВЯЗАН НОМЕР ТЕЛЕФОНА!')
-  L = input ('>>>')
-  if L == "":
-    os.system('cls' if os.name=='nt' else 'clear')
-    print (logo)
-    print ('[!] Ошибка! Повтори запрос!')
-    time.sleep(2)
-    mail()
-  else:
-    mail1()
-def mail1():
-  global P
-  os.system('cls' if os.name=='nt' else 'clear')
-  print (logo)
-  print ('Введите пароль от почты:')
-  P = input ('>>>')
-  if P == "":
-    os.system('cls' if os.name=='nt' else 'clear')
-    print (logo)
-    print ('[!] Ошибка! Повтори запрос!')
-    time.sleep(2)
-    mail1()
-  else:
-    mail2()
-def mail2():
+  global Login
   global U
-  os.system('cls' if os.name=='nt' else 'clear')
-  print (logo)
-  print ('Сервис вашей почты:')
-  print ('[1] - GMAIL.COM')
-  print ('[2] - YANDEX.RU')
-  print ('[3] - MAIL.RU')
-  Uchoose = input ('>>>')
-  if Uchoose == "1":
-    U = "smtp.gmail.com"
-    mail3()
-  if Uchoose == "2":
-    U = "smtp.yandex.ru"
-    mail3()
-  if Uchoose == "3":
-    U = "smtp.mail.ru"
-    mail3()
-  else:
-    os.system('cls' if os.name=='nt' else 'clear')
-    print (logo)
-    print ('[!] Ошибка! Повтори запрос!')
-    time.sleep(2)
-    mail2()
+  global P
+  Login = [
+  "spammerarnold1@gmail.com", 
+  "spammerarnold2@gmail.com",
+  "spammerarnold3@gmail.com",
+  "spammerarnold5@gmail.com"]
+  L = random.choice(Login)
+  P = "454647Ws"
+  U = "smtp.gmail.com"
+  mail3()
 def mail3():
   global To
   os.system('cls' if os.name=='nt' else 'clear')
@@ -189,12 +149,12 @@ def mail6():
     for value in range( int( N ) ):
       msg = MIMEMultipart()
       msg[ 'Subject' ] = T
-      msg[ 'From' ] = L
+      msg[ 'From' ] = random.choice(Login)
       body = M
       msg.attach( MIMEText( body, 'plain' ) )
       server = root.SMTP_SSL( U, 465 )
-      server.login( L, P )
-      server.sendmail( L, To, msg.as_string() )
+      server.login( random.choice(Login), P )
+      server.sendmail( random.choice(Login), To, msg.as_string() )
       server.quit()
       value += 1
     os.system('cls' if os.name=='nt' else 'clear')
