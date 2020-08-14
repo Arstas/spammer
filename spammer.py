@@ -87,31 +87,7 @@ def mail():
   "spammerarnold3@gmail.com",
   "spammerarnold4@gmail.com",
   "spammerarnold5@gmail.com",
-  "spammerarnold6@gmail.com",
-  "spammerarnold7@mail.ru",
-  "spammerarnold8@mail.ru",
-  "spammerarnold9@mail.ru",
-  "spammerarnold10@mail.ru",
-  "spammerarnold11@mail.ru",
-  "spammerarnold12@mail.ru",
-  "spammerarnold13@mail.ru",
-  "spammerarnold14@mail.ru",
-  "spammerarnold15@mail.ru",
-  "spammerarnold16@mail.ru",
-  "spammerarnold17@mail.ru",
-  "spammerarnold18@mail.ru",
-  "spammerarnold19@mail.ru",
-  "spammerarnold20@mail.ru",
-  "spammerarnold21@mail.ru",
-  "spammerarnold22@mail.ru",
-  "spammerarnold23@mail.ru",
-  "spammerarnold24@mail.ru",
-  "spammerarnold25@mail.ru",
-  "spammerarnold26@mail.ru",
-  "spammerarnold27@mail.ru",
-  "spammerarnold28@mail.ru",
-  "spammerarnold29@mail.ru",
-  "spammerarnold30@mail.ru"]
+  "spammerarnold6@gmail.com",]
   P = "454647Ws"
   mail3()
 def mail3():
